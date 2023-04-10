@@ -5,7 +5,6 @@
     <main>
       {% include header.html %}
       <section class="article">
-        <h1>A PROJECT</h1>
         <div class="article-header">
           <h2 class="article-title">{{page.title}}</h2>
           <small class="date">{{page.date | date_to_string}}</small>
@@ -20,6 +19,7 @@
         <br />
         <div class="content">{{content}}</div>
       </section>
+      <br />
       {% include footer.html %}
     </main>
     {% include category-modal.html%}
