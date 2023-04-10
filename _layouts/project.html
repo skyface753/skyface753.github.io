@@ -9,6 +9,11 @@
         <div class="article-header">
           <h2 class="article-title">{{page.title}}</h2>
           <small class="date">{{page.date | date_to_string}}</small>
+          <div class="links">
+            {% for link in page.links %}
+            <a href="{{link.url}}" class="link">{{link.name}}</a>
+            {% endfor %}
+          </div>
         </div>
         <br />
         <div class="content">{{content}}</div>
