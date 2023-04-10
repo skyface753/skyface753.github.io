@@ -11,7 +11,7 @@ description: "
   <br/>
   <p>
     This is my blog, where I share whatever side projects I've been working on. 
-  </P>
+  </p>
 "
 email: sjoerz@skyface.de
 contact:
@@ -19,7 +19,7 @@ contact:
     url: https://www.linkedin.com/in/sebastian-j%C3%B6rz-01a708232/ 
   - title: github
     url: https://github.com/skyface753
-  - title: dev
-    url: https://dev.to/sharadcodes
+  - title: codepen
+    url: https://codepen.io/skyface753 
   - title: email
     url: mailto:sjoerz@skyface.de
