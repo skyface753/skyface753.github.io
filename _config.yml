@@ -30,5 +30,4 @@ defaults:
     values:
       layout: "project"
       permalink: /projects/:title/
-
 exclude: ["sitemap.xml", "feed.xml", "LICENSE", "README.md"]
