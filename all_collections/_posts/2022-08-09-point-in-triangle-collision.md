@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Point -> Triangle Collision
-date: 2022-06-24 10:18:00
+date: 2022-08-09 10:18:00
 categories: [Math]
 ---
 
