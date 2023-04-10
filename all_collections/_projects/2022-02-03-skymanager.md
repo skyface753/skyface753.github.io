@@ -1,7 +1,7 @@
 ---
 layout: project
 title: SkyManager
-date: 2022-09-08 10:18:00
+date: 2022-02-03
 links:
   - title: backend
     url: https://github.com/skyface753/SkyManager
@@ -11,4 +11,6 @@ links:
     url: https://demo.skymanager.net/
 ---
 
-A Web, IOS and Android App for managing tickets, customers and documents build with Flutter and NodeJS
+A Web, IOS and Android App for managing tickets, customers and documents.
+
+Build with Flutter and NodeJS
