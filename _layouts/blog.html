@@ -29,7 +29,13 @@
             <a href="{{site.baseurl}}{{project.url}}"> {{project.title}} </a>
           </h2>
           <small class="date">{{project.date | date_to_string}}</small>
-         
+          <div class="links">
+            {% for link in project.links %}
+            <a href="{{link.url}}" class="link" target="_blank"
+              >{{link.title}}</a
+            >
+            {% endfor %}
+          </div>
         </article>
         {%endfor%}
       {% include footer.html %}

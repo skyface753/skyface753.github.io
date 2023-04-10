@@ -1,0 +1,7 @@
+.link {
+  border-radius: 20px;
+  padding: 0 0.7rem;
+  background: var(--white-2);
+  font-size: 0.9rem;
+  color: #d80b77;
+}

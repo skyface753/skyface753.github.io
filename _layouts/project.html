@@ -11,7 +11,9 @@
           <small class="date">{{page.date | date_to_string}}</small>
           <div class="links">
             {% for link in page.links %}
-            <a href="{{link.url}}" class="link">{{link.title}}</a>
+            <a href="{{link.url}}" class="link" target="_blank"
+              >{{link.title}}</a
+            >
             {% endfor %}
           </div>
         </div>
