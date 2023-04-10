@@ -1,23 +1,25 @@
-name: Sharad Raj
-dp: https://avatars2.githubusercontent.com/u/36638057?s=460&u=0cbe4fd6b5a3655d91b3eb86db834d0829a0c086&v=4
+name: Sebastian Joerz
+dp: https://avatars.githubusercontent.com/u/55393486?v=4 
 description: "
   <p>
-    Developed by Sharad Raj who lives in India building useful things for the world.
+  Hi, I'm Sebastian.
   </p>
   <br/>
   <p>
-    You should follow him on <a href='https://github.com/sharadcodes' target='_blank'>Github</a>
+   I'm a computer science student in Darmstadt. I develop web and mobile apps as a hobby fullstack developer. 
+  </p>
+  <br/>
+  <p>
+    This is my blog, where I share whatever side projects I've been working on. 
   </P>
 "
-email: dev_sharad@outlook.com
+email: sjoerz@skyface.de
 contact:
   - title: linkedin
-    url: https://www.linkedin.com/in/srsmaurya
+    url: https://www.linkedin.com/in/sebastian-j%C3%B6rz-01a708232/ 
   - title: github
-    url: https://github.com/sharadcodes
-  - title: twitter
-    url: https://twitter.com/iamsharadraj
+    url: https://github.com/skyface753
   - title: dev
     url: https://dev.to/sharadcodes
   - title: email
-    url: mailto:dev_sharad@outlook.com
+    url: mailto:sjoerz@skyface.de
