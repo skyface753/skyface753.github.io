@@ -16,7 +16,7 @@
 ## Development
 
 1. Start docker container
-   `make run`
+   `docker run -it -v "$PWD":/usr/src/app -w /usr/src/app -p 4000:4000 ruby /bin/bash`
 2. Run
    `bundle install`
 3. Start Jekyll server
