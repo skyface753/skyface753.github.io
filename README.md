@@ -13,6 +13,15 @@
 - Sitemap
 - and more...
 
+## Development
+
+1. Start docker container
+   `make run`
+2. Run
+   `bundle install`
+3. Start Jekyll server
+   `bundle exec jekyll serve --host=0.0.0.0`
+
 ## How to install
 
 1. Download or clone the repo
@@ -22,7 +31,7 @@
 3. Run
    `bundle install`
 4. Start Jekyll server
-   `bundle exec jekyll serve`
+   `bundle exec jekyll serve --host=0.0.0.0`
 5. Access via
    - localhost or according to your pc configurations.
 6. Change the `_config.yml` & `_data/author.yml` files as you like.
