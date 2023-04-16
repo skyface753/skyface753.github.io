@@ -1,0 +1,4 @@
+---
+title: Certificates
+layout: certs
+---

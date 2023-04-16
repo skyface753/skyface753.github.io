@@ -18,6 +18,8 @@ collections:
     output: true
   projects:
     output: true
+  certs:
+    output: true
 
 defaults:
   - scope:

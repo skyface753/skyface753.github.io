@@ -20,7 +20,7 @@
 2. Run
    `bundle install`
 3. Start Jekyll server
-   `bundle exec jekyll serve --host=0.0.0.0`
+   `bundle exec jekyll serve --host=0.0.0.0 --livereload`
 
 ## How to install
 
