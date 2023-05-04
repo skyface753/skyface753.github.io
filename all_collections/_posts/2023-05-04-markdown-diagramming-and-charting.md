@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Mermaid - Markdown diagramming and charting tool
-date: 2022-06-24 10:18:00
+date: 2023-05-04 10:15:00
 categories: [Markdown, Mermaid, diagram, chart]
 ---
 
