@@ -42,8 +42,17 @@
       </section>
       <section class="articles">
         <h1 style="text-align: center">
-          <a href="{{site.baseurl}}/certs">See my CERTIFICATIONS</a>
+          <a href="{{site.baseurl}}/certs">CERTIFICATIONS</a>
         </h1>
+        <!-- List of certs with link -->
+        <ul>
+          {% assign certs = site.certs | sort: "date" | reverse %} {% for cert
+          in certs %}
+          <li>
+            <a href="{{site.baseurl}}{{cert.pdf}}"> {{cert.title}} </a>
+          </li>
+          {%endfor%}
+        </ul>
       </section>
 
       {% include footer.html %}
