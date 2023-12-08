@@ -25,34 +25,41 @@
       <section class="articles">
         {% assign projects = site.projects | sort: "date" | reverse %} {% for
         project in projects %}
-        <article class="article">
-          <h2 class="article-title">
-            <a href="{{site.baseurl}}{{project.url}}"> {{project.title}} </a>
-          </h2>
-          <small class="date">{{project.date | date_to_string}}</small>
-          <div class="links">
-            {% for link in project.links %}
-            <a href="{{link.url}}" class="link" target="_blank"
-              >{{link.title}}</a
-            >
-            {% endfor %}
+        <article class="article project-hori">
+          <div class="left">
+            <h2 class="project-title">
+              <a href="{{site.baseurl}}{{project.url}}"> {{project.title}} </a>
+            </h2>
+            <small class="date">{{project.date | date_to_string}}</small>
+            <div class="project-links">
+              {% for link in project.links %}
+              <a href="{{link.url}}" class="project-link" target="_blank"
+                >{{link.title}}</a
+              >
+              {% endfor %}
+            </div>
           </div>
+          {% if project.description %}
+          <div class="right">{{project.description}}</div>
+          {% endif %}
         </article>
         {%endfor%}
       </section>
+      <h1>CERTIFICATIONS</h1>
+
       <section class="articles">
-        <h1 style="text-align: center">
-          <a href="{{site.baseurl}}/certs">CERTIFICATIONS</a>
-        </h1>
-        <!-- List of certs with link -->
-        <ul>
-          {% assign certs = site.certs | sort: "date" | reverse %} {% for cert
-          in certs %}
-          <li>
+        {% assign certs = site.certs | sort: "date" | reverse %} {% for cert in
+        certs limit: 3 %}
+        <article class="article">
+          <h2 class="project-title">
             <a href="{{site.baseurl}}{{cert.pdf}}"> {{cert.title}} </a>
-          </li>
-          {%endfor%}
-        </ul>
+          </h2>
+          <small class="date">{{cert.date | date_to_string}}</small>
+        </article>
+        {%endfor%}
+        <small class="see-more">
+          <a href="{{site.baseurl}}/certs">See More</a>
+        </small>
       </section>
 
       {% include footer.html %}

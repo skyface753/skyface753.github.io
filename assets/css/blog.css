@@ -134,7 +134,9 @@ main {
   transition: all 0.2s ease-in-out;
 }
 .articles .article .article-title,
-.articles .article .article-title a {
+.articles .article .article-title a,
+.articles .article .project-title,
+.articles .article .project-title a {
   color: var(--white-2);
   font-weight: 100;
   font-style: italic;
@@ -148,13 +150,15 @@ main {
   display: block;
   font-size: 0.8rem;
 }
-.articles .article .categories {
+.articles .article .categories,
+.articles .article .project-links {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
 }
-.articles .article .categories .category {
+.articles .article .categories .category,
+.articles .article .project-links .project-link {
   margin: 0 0.5rem 0.3rem 0;
   display: block;
   color: var(--gray-4);
@@ -224,4 +228,34 @@ main {
   .articles .article .article-title a {
     font-size: 1rem;
   }
+}
+
+.project-link {
+  color: var(--pink-1) !important;
+}
+
+.see-more {
+  /* Align right */
+  text-align: right;
+}
+
+/* Project hori has a left and a right child. the right child should be flex 3, the left flex 1 */
+.project-hori {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.right {
+  margin-left: 0;
+  margin-top: 1rem;
+  font-size: 1rem;
+  font-weight: 100;
+  font-style: italic;
+  line-height: 130%;
+  flex: 1;
+}
+
+.left {
+  flex: 1;
 }
