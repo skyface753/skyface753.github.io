@@ -169,6 +169,26 @@ main {
   line-height: 1.3rem;
   cursor: pointer;
 }
+
+.articles .article .tags,
+.articles .article .project-links {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.articles .article .tags .tag,
+.articles .article .project-links .project-link {
+  margin: 0 0.5rem 0.3rem 0;
+  display: block;
+  color: var(--gray-4);
+  background: var(--white-2);
+  border-radius: 15px;
+  font-size: 0.7rem;
+  padding: 0 0.8rem;
+  line-height: 1.3rem;
+  cursor: pointer;
+}
 /* media query */
 
 @media screen and (max-width: 750px) {

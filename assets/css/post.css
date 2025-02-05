@@ -96,6 +96,24 @@ main {
   cursor: pointer;
 }
 
+.tags {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.tags .tag {
+  margin: 0 0.5rem 0 0;
+  display: block;
+  color: var(--gray-4);
+  background: var(--white-2);
+  border-radius: 15px;
+  font-size: 0.7rem;
+  padding: 0 0.8rem;
+  line-height: 1.3rem;
+  cursor: pointer;
+}
+
 /* markdown content */
 
 .content * {
