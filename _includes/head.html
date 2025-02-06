@@ -34,7 +34,7 @@
   <meta name="theme-color" content="#ffffff" />
   <title>{{site.title}} | {{page.title}}</title>
   {% if page.mermaid %} {% include mermaid.html %} {% endif %} {% if page.layout
-  == "post" or page.layout == "paper" %}
+  == "post" or page.layout == "paper" or page.layout == "project" %}
   <link rel="stylesheet" href="{{site.baseurl}}/assets/css/post.css" />
   <link rel="stylesheet" href="{{site.baseurl}}/assets/css/syntax.css" />
   {% else %}
@@ -54,7 +54,8 @@
       );
     }
   </script>
-  {% if page.layout == "post" or page.layout == "paper" %}
+  {% if page.layout == "post" or page.layout == "paper" or page.layout ==
+  "project" %}
   <script defer src="{{site.baseurl}}/assets/js/lbox.js"></script>
   {% endif %}
 </head>
