@@ -1,6 +1,9 @@
 title: SkyBlog
 markdown: kramdown
 
+url: "https://www.skyface.de"
+baseurl: "/"
+
 # for atom feed
 author:
   name: Sebastian Joerz
