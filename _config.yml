@@ -16,11 +16,7 @@ collections_dir: all_collections
 collections:
   posts:
     output: true
-  projects:
-    output: true
   certs:
-    output: true
-  papers:
     output: true
 
 defaults:
@@ -29,14 +25,4 @@ defaults:
     values:
       layout: "post"
       permalink: /posts/:title/
-  - scope:
-      path: "_projects"
-    values:
-      layout: "project"
-      permalink: /projects/:title/
-  - scope:
-      path: "_papers"
-    values:
-      layout: "paper"
-      permalink: /papers/:title/
 exclude: ["sitemap.xml", "feed.xml", "LICENSE", "README.md"]

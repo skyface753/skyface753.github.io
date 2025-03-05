@@ -125,7 +125,7 @@ main {
 .articles {
   display: grid;
   row-gap: 2rem;
-  margin: 4rem 0 3rem 0;
+  margin: 2rem 0 3rem 0;
 }
 .articles .article {
   padding: 2rem;
@@ -153,6 +153,7 @@ main {
 .articles .article .categories,
 .articles .article .project-links {
   display: flex;
+  align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -278,4 +279,22 @@ main {
 
 .left {
   flex: 1;
+}
+
+.project-tag {
+  color: var(--pink-1);
+  /* like a tag */
+  background: var(--white-2);
+  border-radius: 10px;
+  font-size: 0.7rem;
+  padding: 0 0.8rem;
+  font-weight: 500;
+  height: fit-content;
+  /* line-height: 1.3rem;
+  cursor: pointer; */
+}
+
+.article-title {
+  display: flex;
+  justify-content: space-between;
 }

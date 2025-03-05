@@ -1,8 +1,9 @@
 ---
-layout: project
+layout: post
 title: SkyNutrition
 date: 2023-12-08
 description: A simple nutrition app that allows you to track your daily calorie intake and fitness activities.
+special_type: PROJECT
 links:
   - title: Code
     url: https://github.com/skyface753/SkyNutrition

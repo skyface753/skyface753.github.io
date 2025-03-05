@@ -7,6 +7,7 @@
   --gray-6: #111111;
   --white-1: #eeeeee;
   --white-2: #a9abb3;
+  --pink-1: #d80b77;
 }
 
 @media (prefers-color-scheme: light) {
@@ -133,4 +134,17 @@ hr {
   border-left: none !important;
   border-right: none !important;
   margin-bottom: 1.75rem !important;
+}
+
+.link,
+.category {
+  border-radius: 20px;
+  padding: 0 0.7rem;
+  background: var(--white-2);
+  font-size: 0.9rem;
+  color: var(--pink-1);
+}
+
+.category {
+  color: var(--gray-4) !important;
 }

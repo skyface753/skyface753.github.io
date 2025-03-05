@@ -1,7 +1,8 @@
 ---
-layout: project
+layout: post
 title: Chest System
 description: Storage System for Chests
+special_type: PROJECT
 date: 2023-11-08
 links:
   - title: Code

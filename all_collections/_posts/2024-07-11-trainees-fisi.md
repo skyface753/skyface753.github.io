@@ -1,7 +1,8 @@
 ---
-layout: project
+layout: post
 title: Trainees FISI
 description: A Dokumentation for all Ressources for FISI Trainees
+special_type: PROJECT
 date: 2024-07-11
 links:
   - title: Website

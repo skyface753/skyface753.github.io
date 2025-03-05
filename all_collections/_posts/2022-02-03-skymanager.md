@@ -1,8 +1,9 @@
 ---
-layout: project
+layout: post
 title: SkyManager
 description: A Web, IOS and Android App for managing tickets, customers and documents.
 date: 2022-02-03
+special_type: PROJECT
 links:
   - title: Backend
     url: https://github.com/skyface753/SkyManager

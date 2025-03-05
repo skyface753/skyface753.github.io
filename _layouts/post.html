@@ -6,13 +6,23 @@
       {% include header.html %}
       <section class="article">
         <div class="article-header">
-          <h2 class="article-title">{{page.title}}</h2>
+          <h1 class="article-title">{{page.title}}</h1>
           <small class="date">{{page.date | date_to_string}}</small>
+          {% if page.categories != empty %}
           <div class="categories">
-            {% for c in page.categories %}
+            Categories: {% for c in page.categories %}
             <a href="#!" class="category">{{c}}</a>
             {% endfor %}
           </div>
+          {% endif %} {% if page.links != empty and page.links != null %}
+          <div class="links">
+            Links: {% for link in page.links %}
+            <a href="{{link.url}}" class="link" target="_blank"
+              >{{link.title}}</a
+            >
+            {% endfor %}
+          </div>
+          {% endif %}
         </div>
         <div class="content">{{content}}</div>
       </section>

@@ -3,84 +3,74 @@
   {% include head.html %}
   <body>
     <main>
-      {% include header.html %} {% include bio.html %}
+      <header>
+        <h1>
+          <a class="site-title" href="{{site.baseurl}}/">{{site.title}}</a>
+        </h1>
+        <!-- dark/light mode -->
+        <span id="dark-mode-toggle" style="cursor: pointer">
+          <svg
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 16 16"
+            height="1.2em"
+            width="1.2em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zm0 13V2a6 6 0 1 1 0 12z"
+            ></path>
+          </svg>
+        </span>
+      </header>
+      {% include bio.html %}
+      <h2 style="margin-top: 2rem">POSTS</h2>
       <section class="articles">
         {% for post in site.posts %}
         <article class="article">
-          <h2 class="article-title">
+          <h3 class="article-title">
             <a href="{{site.baseurl}}{{post.url}}"> {{post.title}} </a>
-          </h2>
+            {% if post.special_type %}
+            <span class="project-tag">{{post.special_type}}</span>
+            {% endif %}
+          </h3>
           <small class="date">{{post.date | date_to_string}}</small>
+          {% if post.categories != empty and post.categories != null %}
           <div class="categories">
-            {% for c in post.categories %}
+            Categories: {% for c in post.categories %}
             <a href="#!" data-base-url="{{site.baseurl}}" class="category"
               >{{c}}</a
             >
             {% endfor %}
           </div>
-        </article>
-        {%endfor%}
-      </section>
-      <h1>PROJECTS</h1>
-      <section class="articles">
-        {% assign projects = site.projects | sort: "date" | reverse %} {% for
-        project in projects %}
-        <article class="article project-hori">
-          <div class="left">
-            <h2 class="project-title">
-              <a href="{{site.baseurl}}{{project.url}}"> {{project.title}} </a>
-            </h2>
-            <small class="date">{{project.date | date_to_string}}</small>
-            <div class="project-links">
-              {% for link in project.links %}
-              <a href="{{link.url}}" class="project-link" target="_blank"
-                >{{link.title}}</a
-              >
-              {% endfor %}
-            </div>
+          {% endif %} {% if post.links != empty and post.links != null %}
+          <div class="links">
+            Links: {% for link in post.links %}
+            <a href="{{link.url}}" class="link" target="_blank"
+              >{{link.title}}</a
+            >
+            {% endfor %}
           </div>
-          {% if project.description %}
-          <div class="right">{{project.description}}</div>
           {% endif %}
         </article>
         {%endfor%}
       </section>
-      <h1>CERTIFICATIONS</h1>
+
+      <h2>CERTIFICATIONS</h2>
 
       <section class="articles">
         {% assign certs = site.certs | sort: "date" | reverse %} {% for cert in
         certs limit: 3 %}
         <article class="article">
-          <h2 class="project-title">
+          <h3 class="project-title">
             <a href="{{site.baseurl}}{{cert.pdf}}"> {{cert.title}} </a>
-          </h2>
+          </h3>
           <small class="date">{{cert.date | date_to_string}}</small>
         </article>
         {%endfor%}
         <small class="see-more">
           <a href="{{site.baseurl}}/certs">See More</a>
-        </small>
-      </section>
-
-      <h1>PAPERS</h1>
-
-      <section class="articles">
-        {% assign papers = site.papers | sort: "date" | reverse %} {% for paper
-        in papers limit: 3 %}
-        <article class="article">
-          <h2 class="project-title">
-            <a href="{{site.baseurl}}{{paper.url}}"> {{paper.title}} </a>
-          </h2>
-          <small class="date">{{paper.date | date_to_string}}</small>
-          <div class="tags">
-            {% for t in paper.tags %}
-            <a href="#!" data-base-url="{{site.baseurl}}" class="tag">{{t}}</a>
-            {% endfor %}
-          </div>
-        </article>
-        {%endfor%}
-        <small class="see-more">
-          <a href="{{site.baseurl}}/papers">See More</a>
         </small>
       </section>
 

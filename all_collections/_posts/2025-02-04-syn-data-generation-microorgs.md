@@ -1,13 +1,16 @@
 ---
-layout: paper
+layout: post
 title: Synthetische Datengenerierung für die Erkennung von Mikroorganismen
 date: 2025-02-04 10:18:00
-tags: [Computer Vision, Machine Learning, Data Augmentation]
+categories: [Computer Vision, Machine Learning, Data Augmentation]
+special_type: PAPER
 ---
 
-# Evaluation von synthetischer Datengenerierung für die Erkennung von Mikroorganismen
+<!-- # Evaluation von synthetischer Datengenerierung für die Erkennung von Mikroorganismen -->
 
-In meinem Bachelorprojekt an der Hochschule Darmstadt habe ich mich mit der Generierung von synthetischen Daten für die Objekterkennung von Mikroorganismen unter dem Mikroskop beschäftigt. Ziel war es, den Mangel an annotierten Trainingsdaten zu überwinden, der häufig in spezialisierten Anwendungsgebieten wie der Mikrobiologie auftritt. Außerdem sollte die Realitätsnähe der synthetischen Daten bewertet werden, um ihre Eignung für den Einsatz in Machine-Learning-Modellen zu prüfen.
+In meinem Bachelorprojekt an der Hochschule Darmstadt habe ich mich mit der Erstellung von künstlichen Daten für die Erkennung von Mikroorganismen unter dem Mikroskop beschäftigt. Ziel war es, den Mangel an annotierten Trainingsdaten zu überwinden, der in spezialisierten Anwendungsgebieten wie der Mikrobiologie häufig auftritt. Außerdem sollte die Realitätsnähe der synthetischen Daten evaluiert werden, um ihre Eignung für den Einsatz in Machine-Learning-Modellen zu prüfen.
+
+![Bärtierchen](/assets/papers/syn-data-gen-microorgs/Tardigrade_01_0003-min.png)
 
 ## Motivation
 
@@ -43,6 +46,16 @@ Durch die Verwendung der synthetischen Datensätze zur Verbesserung eines YOLOv1
 ![Results](/assets/papers/syn-data-gen-microorgs/heat_plot_YlGnBu.png)
 
 Diese Resultate zeigen, dass synthetische Daten nicht nur den Datensatz erweitern, sondern auch die Robustheit und Generalisierungsfähigkeit des Modells erhöhen.
+
+## Anschauliche Beispiele
+
+Erkennung von Bärtierchen vor und nach der Verwendung von synthetischen Daten:
+
+| Vorher                                                                             | Nachher                                                                             |
+| ---------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| ![Vorher](/assets/papers/syn-data-gen-microorgs/best-t1.pt_Tardigrade_01_0028.png) | ![Nachher](/assets/papers/syn-data-gen-microorgs/best-t4.pt_Tardigrade_01_0028.png) |
+
+Vorher wurden beide Bärtierchen nicht erkannt, stattdessen wurde Klärschlamm als Bärtierchen klassifiziert. Nach der Verwendung von synthetischen Daten wurden beide Bärtierchen korrekt erkannt.
 
 ## Bewertung der Realitätsnähe
 
