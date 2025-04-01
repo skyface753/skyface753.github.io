@@ -77,3 +77,7 @@ Die "Cut-Paste"-Methode in Kombination mit geeigneten Blending-Techniken ist ein
 ---
 
 Du hast Fragen zu meiner Arbeit oder möchtest mehr über synthetische Datengenerierung erfahren? Schreib mir gerne eine E-Mail oder kontaktiere mich auf LinkedIn.
+
+## Download
+
+<a href="/assets/pdf/Bachelorarbeit-Sebastian-Joerz-1116144.pdf" download="BA-Sebastian_Joerz-Synthetic_data_generation.pdf">Download my Bachelor Thesis</a>
