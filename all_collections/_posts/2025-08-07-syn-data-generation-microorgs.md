@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Synthetische Datengenerierung für die Erkennung von Mikroorganismen
-date: 2025-02-04 10:18:00
+date: 2025-08-07 10:18:00
 categories: [Computer Vision, Machine Learning, Data Augmentation]
 special_type: PAPER
 ---
@@ -11,6 +11,14 @@ special_type: PAPER
 In meinem Bachelorprojekt an der Hochschule Darmstadt habe ich mich mit der Erstellung von künstlichen Daten für die Erkennung von Mikroorganismen unter dem Mikroskop beschäftigt. Ziel war es, den Mangel an annotierten Trainingsdaten zu überwinden, der in spezialisierten Anwendungsgebieten wie der Mikrobiologie häufig auftritt. Außerdem sollte die Realitätsnähe der synthetischen Daten evaluiert werden, um ihre Eignung für den Einsatz in Machine-Learning-Modellen zu prüfen.
 
 ![Bärtierchen](/assets/papers/syn-data-gen-microorgs/Tardigrade_01_0003-min.png)
+
+## Veröffentlichung & Poster
+
+Das Paper wird derzeit im Rahmen der [International Conference AI&Visualisation](https://iv.csites.fct.unl.pt/de/ai-viz/) veröffentlicht. Das Poster zur Arbeit ist bereits verfügbar:
+
+<a href="{{site.baseurl}}/assets/papers/syn-data-gen-microorgs/poster.pdf"> Poster.pdf </a>
+
+<!-- ![Poster](/assets/papers/syn-data-gen-microorgs/Poster__Bridging_the_Syn-to-Real_Gap.pdf) -->
 
 ## Motivation
 
