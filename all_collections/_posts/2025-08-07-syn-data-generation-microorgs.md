@@ -14,9 +14,11 @@ In meinem Bachelorprojekt an der Hochschule Darmstadt habe ich mich mit der Erst
 
 ## Veröffentlichung & Poster
 
-Das Paper wird derzeit im Rahmen der [International Conference AI&Visualisation](https://iv.csites.fct.unl.pt/de/ai-viz/) veröffentlicht. Das Poster zur Arbeit ist bereits verfügbar:
+Das Paper wird derzeit im Rahmen der [International Conference AI&Visualisation](https://iv.csites.fct.unl.pt/de/ai-viz/) veröffentlicht. Das Poster zur Arbeit ist bereits verfügbar: <a href="{{site.baseurl}}/assets/papers/syn-data-gen-microorgs/poster.pdf"> Poster.pdf </a>
 
-<a href="{{site.baseurl}}/assets/papers/syn-data-gen-microorgs/poster.pdf"> Poster.pdf </a>
+## Demo
+
+Eine kleine Streamlit-App, bei der die Erkennung der Bärtierchen live getestet werden kann, ist ebenfalls verfügbar: <a href="https://microorganism-detection-3wtt4ihdsgvbgrnkqr6cur.streamlit.app/">Demo</a>
 
 <!-- ![Poster](/assets/papers/syn-data-gen-microorgs/Poster__Bridging_the_Syn-to-Real_Gap.pdf) -->
 
