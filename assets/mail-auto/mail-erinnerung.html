@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'; connect-src 'none'">
+  <title>Mail-Erinnerung</title>
+  <style>
+    :root { color-scheme: light dark; font-family: system-ui, sans-serif; }
+    body { margin: 0; padding: 24px; background: Canvas; color: CanvasText; }
+    main { max-width: 540px; margin: 32px auto; }
+    h1 { font-size: 1.65rem; }
+    dt { font-weight: 600; margin-top: 20px; }
+    dd { margin: 6px 0 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+    .button { display: inline-block; margin-top: 24px; padding: 14px 18px; border-radius: 10px;
+      background: #1558c0; color: white; text-decoration: none; font-weight: 600; }
+    .button:focus-visible { outline: 3px solid CanvasText; outline-offset: 4px; }
+    p { line-height: 1.5; }
+    #error { color: #c33535; }
+    [hidden] { display: none !important; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Apple-Erinnerung vorbereiten</h1>
+    <p>Pruefe die Angaben und oeffne dann deinen iPhone-Kurzbefehl
+      <strong>Mail-Erinnerung</strong>.</p>
+    <p id="error" role="alert" hidden></p>
+    <noscript>Bitte JavaScript aktivieren, um die Erinnerungsdaten auf diesem Geraet zu lesen.</noscript>
+    <section id="preview" hidden aria-label="Vorschau">
+      <dl>
+        <dt>Titel</dt><dd id="title"></dd>
+        <dt>Faelligkeit</dt><dd id="due"></dd>
+        <dt>Notiz</dt><dd id="notes"></dd>
+      </dl>
+      <a id="open-shortcut" class="button">In Apple-Erinnerungen uebernehmen</a>
+      <p>Es wird nur der Kurzbefehl geoeffnet. Ob die Erinnerung angelegt wurde,
+        zeigt dir die Kurzbefehle-App, nicht der Bot oder diese Seite.
+        Erneutes Ausfuehren kann eine zweite Erinnerung anlegen.</p>
+    </section>
+    <p>Falls Telegram den Wechsel zur Kurzbefehle-App blockiert:
+      den urspruenglichen Link aus der Telegram-Nachricht in Safari oeffnen.</p>
+    <p>Diese Seite sendet die Erinnerungsdaten nicht an den Webserver.
+      Der Link selbst enthaelt die Daten: nicht oeffentlich weitergeben.</p>
+  </main>
+  <script>
+    "use strict";
+    function loadReminder() {
+      const fragment = location.hash.slice(1);
+      document.getElementById("preview").hidden = true;
+      document.getElementById("error").hidden = true;
+      document.getElementById("open-shortcut").removeAttribute("href");
+      // Nach dem Einlesen nicht weiter in der Adressleiste stehen lassen.
+      history.replaceState(null, "", location.pathname + location.search);
+      try {
+        if (!fragment) {
+          throw new Error("Keine Erinnerungsdaten vorhanden. Bitte den vollstaendigen Link aus Telegram oeffnen.");
+        }
+        if (fragment.length > 4096) {
+          throw new Error("Der Erinnerungslink ist zu lang.");
+        }
+        const data = JSON.parse(decodeURIComponent(fragment));
+        if (!data || typeof data !== "object" || Array.isArray(data)
+            || typeof data.title !== "string" || !data.title.trim()
+            || [...data.title].length > 200 || /[\r\n]/.test(data.title)
+            || typeof data.notes !== "string" || [...data.notes].length > 1000
+            || typeof data.due_at !== "string") {
+          throw new Error("Ungueltige Erinnerungsdaten. Bitte einen neuen Link vom Bot erstellen lassen.");
+        }
+        let dueText = "Ohne Faelligkeit";
+        if (data.due_at) {
+          if (!/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:Z|[+-]\d{2}:\d{2})$/.test(data.due_at)
+              || Number.isNaN(Date.parse(data.due_at))) {
+            throw new Error("Die Faelligkeit muss ein ISO-8601-Zeitpunkt mit Zeitzone sein.");
+          }
+          dueText = new Intl.DateTimeFormat("de-DE", {
+            dateStyle: "full", timeStyle: "short"
+          }).format(new Date(data.due_at)) + " (Geraetezeit; uebergeben: " + data.due_at + ")";
+        }
+        const payload = JSON.stringify({
+          title: data.title.trim(), notes: data.notes, due_at: data.due_at
+        });
+        document.getElementById("title").textContent = data.title.trim();
+        document.getElementById("notes").textContent = data.notes || "Keine Notiz";
+        document.getElementById("due").textContent = dueText;
+        document.getElementById("open-shortcut").href =
+          "shortcuts://run-shortcut?name=" + encodeURIComponent("Mail-Erinnerung")
+          + "&input=text&text=" + encodeURIComponent(payload);
+        document.getElementById("preview").hidden = false;
+      } catch (error) {
+        const message = document.getElementById("error");
+        message.textContent = error instanceof SyntaxError || error instanceof URIError
+          ? "Der Link enthaelt beschaedigte Daten. Bitte einen neuen Link vom Bot erstellen lassen."
+          : error.message;
+        message.hidden = false;
+      }
+    }
+    addEventListener("hashchange", loadReminder);
+    loadReminder();
+  </script>
+</body>
+</html>
